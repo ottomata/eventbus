@@ -1,6 +1,6 @@
 {
-  "name": "service-template-node",
-  "version": "0.5.6",
+  "name": "eventgate",
+  "version": "1.0.0",
   "description": "A blueprint for MediaWiki REST API services",
   "main": "./app.js",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/wikimedia/service-template-node.git"
+    "url": "git@github.com:wikimedia/eventgate.git"
   },
   "keywords": [
     "REST",
@@ -23,13 +23,17 @@
     "MediaWiki"
   ],
   "author": "Wikimedia Service Team <services@wikimedia.org>",
-  "contributors": [],
+  "contributors": [
+    "Andrew Otto <otto@wikimedia.org>",
+    "Petr Pchelko <ppchelko@wikimedia.org>"
+  ],
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://phabricator.wikimedia.org/tag/service-template-node/"
+    "url": "https://phabricator.wikimedia.org/tag/wikimedia-stream/"
   },
-  "homepage": "https://github.com/wikimedia/service-template-node",
+  "homepage": "https://github.com/wikimedia/eventgate",
   "dependencies": {
+    "ajv": "^6.5.1",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
     "bunyan": "^1.8.12",
@@ -39,14 +43,15 @@
     "express": "^4.16.3",
     "http-shutdown": "^1.2.0",
     "js-yaml": "^3.12.0",
+    "lodash": "^4.17.11",
+    "node-rdkafka": "^2.4.2",
     "preq": "^0.5.6",
     "service-runner": "^2.6.3",
     "swagger-router": "^0.7.1",
     "swagger-ui": "git+https://github.com/wikimedia/swagger-ui#master"
   },
   "devDependencies": {
-    "ajv": "^6.5.1",
-    "eslint": "^4.19.1",
+    "eslint": "^5.8.0",
     "eslint-config-node-services": "^2.2.5",
     "eslint-config-wikimedia": "^0.5.0",
     "eslint-plugin-jsdoc": "^3.7.1",
@@ -60,7 +65,7 @@
   },
   "deploy": {
     "target": "debian",
-    "node": "6.11.1",
+    "node": "10.12.0",
     "dependencies": {
       "_all": []
     }
